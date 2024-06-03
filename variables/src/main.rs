@@ -9,9 +9,19 @@ fn double_or_nothing(n: i32) -> i32 {
     0
 }
 
-fn greet(s: &String) {
-    print!("Hellp {s}");
+fn greet(s: String) -> String {
+    print!("Hello {s}");
+    s
 }
+
+fn greet_borrow(s: &String) {
+    print!("{s}");
+}
+
+fn greet_borrow_mut(s: &mut String) {
+    *s = format!("Hello {s}");
+}
+ 
 
 fn main() {
     let n = double(2);
@@ -37,6 +47,12 @@ fn main() {
 
     let name = "Hello".to_string();
     println!("hello {name}");
-    greet(&name);
-    greet(&name);
+    
+ 
+    let mut name = greet(name);
+    greet_borrow_mut(&mut name);
+    println!("hello {name}");
+    greet_borrow(&name);
+    println!("hello {name}");
+    
 }
