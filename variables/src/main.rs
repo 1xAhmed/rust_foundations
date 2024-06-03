@@ -9,6 +9,11 @@ fn double_or_nothing(n: i32) -> i32 {
     0
 }
 
+fn greet(s: String) -> String {
+    print!("Hellp {s}");
+    s
+}
+
 fn main() {
     let n = double(2);
     println!("{}", double(4));
@@ -30,4 +35,9 @@ fn main() {
     };
 
     println!("{n:?}");
+
+    let name = "Hello".to_string();
+    println!("hello {name}");
+    let name = greet(name);
+    greet(name);
 }
