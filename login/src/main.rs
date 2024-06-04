@@ -16,7 +16,6 @@ fn main() {
                 match role {
                     authentication::LoginRole::Admin => println!("Admin"),
                     authentication::LoginRole::User => println!("User"),
-                    authentication::LoginRole::Denied => println!(""),
                 }
                 break;
             }

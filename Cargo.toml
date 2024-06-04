@@ -2,7 +2,7 @@ resolver = "2"
 [workspace]
 workspace.resolver = "2"
 
-members = [
-    "hello_world", "variables",
+members = [ "authentication",
+    "hello_world", "login", "variables",
 ]
 
