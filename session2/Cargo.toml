@@ -1,7 +1,0 @@
-resolver = "2"
-[workspace]
-workspace.resolver = "2"
-
-members = [ "divide_work",
-    "hello_threads",
-]

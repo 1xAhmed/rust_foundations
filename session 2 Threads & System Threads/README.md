@@ -1,18 +1,9 @@
-# rust_foundations
-
-## Rust learning in sessions
-
-
-## session 1 Basics to CLI App
-hello_world
-authentication
-login
-login_manager
-variables
-
 ## session 2 Threads & System Threads
 
-2.2 - Create Your First Thread
+### What we Did in this session
+
+
+2.2/ - Create Your First Thread
 2.3 - Spawning Threads with Parameters and Closures
 2.4 - Returning Data from Threads
 2.5 - Dividing Workloads

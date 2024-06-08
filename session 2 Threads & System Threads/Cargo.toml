@@ -1,0 +1,23 @@
+resolver = "2"
+[workspace]
+workspace.resolver = "2"
+
+members = [
+    "2.17_affinity",
+    "2.14_channels1",
+    "2.12_dashing",
+    "2.11_deadlocks_panics_poisoning",
+    "2.5_divide_work",
+    "2.8_atomic_threads",
+    "2.2_2.3_2.4_hello_threads",
+    "2.9_mutexes",
+    "2.13_parking_threads",
+    "2.19_rayon_iters",
+    "2.20_rayon_scopes",
+    "2.10_read_write_locks",
+    "2.7_scoped_threads",
+    "2.18_thrdprio",
+    "2.6_thread_builder",
+    "2.15_worker_threads",
+    "2.16_worker2_thread_pools",
+]
