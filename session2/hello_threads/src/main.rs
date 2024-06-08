@@ -1,5 +1,5 @@
 fn hello_thread(n :u32) {
-    println!("Hello from thread {n}");
+    println!("Hello from the thread {n}");
 }
 
 fn main() {
