@@ -1,4 +1,4 @@
-use authentication::get_users;
+use authentication::{get_users, save_users, LoginRole, User};
 use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
@@ -21,7 +21,12 @@ enum Commands {
         password: String,
         ///Optional - mark as admin
         admin: Option<bool>
-    }
+    },
+     /// Delete a user
+     Delete {
+        /// User to delete
+        username: String,
+     }
 }
 
 fn list_users() {
@@ -35,6 +40,29 @@ fn list_users() {
         });
 }
 
+fn add_user(username: String, password: String, admin: bool ) {
+    let mut users = get_users();
+    let role = if admin {
+        LoginRole::Admin
+    } else {
+        LoginRole::User
+    };
+
+    let user = User::new(&username, &password, role);
+    users.insert(username, user);
+    save_users(users);
+}
+
+fn delete_user(username: String) {
+    let mut users = get_users();
+    if users.contains_key(&username) {
+        users.remove(&username);
+        save_users(users);
+    } else {
+        println!("{username} does not exist");
+    }
+}
+
 fn main() {
     let cli = Args::parse();
     match cli.command {
@@ -42,7 +70,10 @@ fn main() {
             list_users()
         }
         Some(Commands::Add { username, password, admin }) => {
-            println!("Add a user");
+            add_user(username, password, admin.unwrap_or(false));
+        }
+        Some(Commands::Delete {username}) => {
+            delete_user(username)
         }
         None => {
             println!("Run with --help to see instructions");
