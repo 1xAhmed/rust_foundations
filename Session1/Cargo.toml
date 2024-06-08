@@ -1,0 +1,8 @@
+resolver = "2"
+[workspace]
+workspace.resolver = "2"
+
+members = [ "authentication",
+    "hello_world", "login", "login_manager", "variables",
+]
+

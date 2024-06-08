@@ -1,0 +1,1 @@
+/Users/macbookair/Documents/Rust/Code/rust_foundations/target/debug/login_manager: /Users/macbookair/Documents/Rust/Code/rust_foundations/authentication/src/lib.rs /Users/macbookair/Documents/Rust/Code/rust_foundations/login_manager/src/main.rs
