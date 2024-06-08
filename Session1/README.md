@@ -1,4 +1,6 @@
-
-## Sesion 1
-
-Contains learnings of rust basics v0.0.1
+### Session 1: Basics to CLI App
+- hello_world
+- authentication
+- login
+- login_manager
+- variables
