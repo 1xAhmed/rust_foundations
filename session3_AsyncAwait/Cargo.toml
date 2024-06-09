@@ -16,4 +16,5 @@ members = [
     "3.9_async_channels_tokio",
     "3.10_shared_state_tokio",
     "3.11_tokio_select",
+    "3.12_recursion",
 ]
