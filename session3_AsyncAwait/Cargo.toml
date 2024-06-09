@@ -9,4 +9,5 @@ members = [
     "3.4_blocking_tasks",
     "3.5_tokio_testing",
     "3.5_tokio_testing",
+    "3.6_errors",
 ]
