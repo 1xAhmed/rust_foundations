@@ -11,5 +11,9 @@ members = [
     "3.5_tokio_testing",
     "3.6_errors",
     "3.7_fileio",
-    "3.8_restclient", "3.8_tcpserver",
+    "3.8_restclient",
+    "3.8_tcpserver",
+    "3.9_async_channels_tokio",
+    "3.10_shared_state_tokio",
+    "3.11_tokio_select",
 ]
