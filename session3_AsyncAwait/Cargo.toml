@@ -2,4 +2,9 @@ resolver = "2"
 [workspace]
 workspace.resolver = "2"
 
-members = ["3.1_hello_async", "3.2_hello_tokio", "3.3_hello_tokio2"]
+members = [
+    "3.1_hello_async",
+    "3.2_hello_tokio",
+    "3.3_hello_tokio2",
+    "3.4_blocking_tasks",
+]
