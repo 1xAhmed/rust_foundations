@@ -7,4 +7,6 @@ members = [
     "3.2_hello_tokio",
     "3.3_hello_tokio2",
     "3.4_blocking_tasks",
+    "3.5_tokio_testing",
+    "3.5_tokio_testing",
 ]
