@@ -1,45 +1,28 @@
-use std::sync::mpsc;
-use std::time::Duration;
+use tokio::sync::broadcast;
+use tokio::sync::mpsc;
 
-enum Command {
-    Print(String),
+async fn receiver(mut rx: mpsc::Receiver<u32>, mut broadcast_rx: broadcast::Receiver<u32>) {
+    loop {
+        tokio::select! {
+            Some(n) = rx.recv() => println!("Received message {n} on the mpsc channel"),
+            Ok(n) = broadcast_rx.recv() => println!("Received message {n} on the broadcast channel"),
+        }
+    }
 }
 
 #[tokio::main]
 async fn main() {
-    let (tx, rx) = mpsc::channel::<Command>();
-    let (tx_reply, mut rx_reply) = tokio::sync::mpsc::channel::<String>(10);
-    let handle = tokio::runtime::Handle::current();
+    let (tx, rx) = mpsc::channel::<u32>(1);
+    let (broadcast_tx, broadcast_rx) = broadcast::channel::<u32>(1);
 
-    std::thread::spawn(move || {
-        while let Ok(command) = rx.recv() {
-            match command {
-                Command::Print(s) => {
-                    let tx_reply = tx_reply.clone();
-                    handle.spawn(async move {
-                        tx_reply.send(s).await.unwrap();
-                    });
-                    // println!("{s}")
-                }
-            }
+    tokio::spawn(receiver(rx, broadcast_rx));
+
+    for count in 0..10 {
+        if count % 2 == 0 {
+            tx.send(count).await.unwrap();
+        } else {
+            broadcast_tx.send(count).unwrap();
         }
-    });
-
-    // Receive messages
-    tokio::spawn(async move {
-        while let Some(reply) = rx_reply.recv().await {
-            println!("{reply}");
-        }
-    });
-
-    // Launch the async sender
-    let mut counter = 0;
-    loop {
-        tokio::time::sleep(Duration::from_secs(1)).await;
-        tx.send(Command::Print(format!("Hello {counter}"))).unwrap();
-        counter += 1;
+        tokio::time::sleep(std::time::Duration::from_secs(1)).await;
     }
-
-    
-    
 }
