@@ -30,3 +30,21 @@
 - **2.18 - Thread Priority**
 - **2.19 - Making it Easy with Rayon**
 - **2.20 - Scopes and Pooled Threads with Rayon**
+
+
+### session3_AsyncAwait
+
+3.1_hello_async
+3.1_hello_async
+3.3_hello_tokio2
+
+3.4_blocking_tasks
+3.5_tokio_testing
+3.6_errors
+3.7_fileio
+3.8_restclient
+3.8_tcpserver
+3.9_async_channels_tokio
+3.10_shared_state_tokio
+3.11_tokio_select
+3.12_recursion (Pinning)
