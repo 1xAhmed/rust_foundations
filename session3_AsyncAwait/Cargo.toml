@@ -10,4 +10,5 @@ members = [
     "3.5_tokio_testing",
     "3.5_tokio_testing",
     "3.6_errors",
+    "3.7_fileio",
 ]
