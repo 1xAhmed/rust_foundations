@@ -172,6 +172,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "hello_tokio2"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
 name = "hermit-abi"
 version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
