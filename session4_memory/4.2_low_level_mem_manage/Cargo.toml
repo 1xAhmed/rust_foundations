@@ -1,0 +1,8 @@
+[package]
+name = "low_level_mem_manage"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libc = "0.2.155"
+protoc = "2.28.0"

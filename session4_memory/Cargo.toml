@@ -1,0 +1,5 @@
+resolver = "2"
+[workspace]
+workspace.resolver = "2"
+
+members = ["4.1_unsafe", "4.2_low_level_mem_manage"]
