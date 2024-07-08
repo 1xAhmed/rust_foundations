@@ -15,5 +15,5 @@ fn main() {
 /// # Safety
 /// This function calls into C code, and must be called with care. It is not thread-safe.
 unsafe fn my_unsafe_function() {
-    ...
+    
 }

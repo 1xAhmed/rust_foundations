@@ -2,4 +2,9 @@ resolver = "2"
 [workspace]
 workspace.resolver = "2"
 
-members = ["4.1_unsafe", "4.2_low_level_mem_manage"]
+members = [
+    "4.1_unsafe",
+    "4.2_low_level_mem_manage",
+    "4.3_dropping_Drop_Trait_RAII",
+    "4.4_reference_counting",
+]
