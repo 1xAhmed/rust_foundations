@@ -7,4 +7,5 @@ members = [
     "4.2_low_level_mem_manage",
     "4.3_dropping_Drop_Trait_RAII",
     "4.4_reference_counting",
+    "4.5_lifetimes",
 ]
