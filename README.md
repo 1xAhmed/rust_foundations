@@ -6,11 +6,12 @@
 
 ### Session 1: Basics to CLI App
 - `hello_world`
-- `hello_world`
+- [Cargo Workspaces](https://1xahmed.medium.com/cargo-workspaces-6482af5ee0ea) Medium article explanation.
+- [variables](https://1xahmed.medium.com/rust-fundamentals-c36d4906340f) Medium article explanation.
+- [Console Text Input](https://1xahmed.medium.com/console-text-input-3403871ec80d) Medium article explanation.
 - `authentication`
 - `login`
 - `login_manager`
-- [variables](https://1xahmed.medium.com/rust-fundamentals-c36d4906340f) Medium article explanation.
 
 ### Session 2: Threads & System Threads
 - **2.2** - Create Your First Thread
