@@ -11,5 +11,5 @@ members = [
     "4.6_traits",
     "4.7_generics",
     "4.8_iterators",
-    "4.9_cycles",
+    "4.9_cycles", "packing",
 ]
