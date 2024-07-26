@@ -8,4 +8,8 @@ members = [
     "4.3_dropping_Drop_Trait_RAII",
     "4.4_reference_counting",
     "4.5_lifetimes",
+    "4.6_traits",
+    "4.7_generics",
+    "4.8_iterators",
+    "4.9_cycles",
 ]
