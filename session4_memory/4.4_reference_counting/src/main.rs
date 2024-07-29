@@ -44,7 +44,7 @@ fn main() {
     println!("{my_shared:?}");
     semi_main();
     semi_main2();
-    mainRefCell()
+    mainRefCell();
     println!("Application exit");
 }
 
@@ -100,7 +100,6 @@ fn semi_main2() {
 
 
 // RefCell example
-use std::{cell:RefCell, sync::Arc};
 
 struct MyData {
     data: RefCell<String>
