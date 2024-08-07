@@ -1,0 +1,11 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+shared_data = { path = "../5.1_shared_data" }
+anyhow = "1.0.86"
+tokio = { version = "1.39.2", features = ["full"] }
