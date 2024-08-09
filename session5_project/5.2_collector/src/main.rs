@@ -76,14 +76,18 @@ pub fn collect_data(tx: Sender<CollectorCommandV1>, collector_id: u128) {
 }
 
 pub fn send_command(bytes: &[u8]) -> Result<(), CollectorError> {
-    let mut stream = std::net::TcpStream::connect(DATA_COLLECTOR_ADDRESS).map_err(|_| CollectorError::UnableToConnect)?;
-    stream.write_all(&bytes).map_err(|_| CollectorError::UnableToSend)?;
+    let mut stream = std::net::TcpStream::connect(DATA_COLLECTOR_ADDRESS)
+        .map_err(|_| CollectorError::UnableToConnect)?;
+    stream
+        .write_all(bytes)
+        .map_err(|_| CollectorError::UnableToSend)?;
     Ok(())
-} 
+}
 
 pub fn send_queue(queue: &mut VecDeque<Vec<u8>>) -> Result<(), CollectorError> {
     // Connect
-    let mut stream = std::net::TcpStream::connect(DATA_COLLECTOR_ADDRESS).map_err(|_| CollectorError::UnableToConnect)?;
+    let mut stream = std::net::TcpStream::connect(DATA_COLLECTOR_ADDRESS)
+        .map_err(|_| CollectorError::UnableToConnect)?;
 
     // Send every queue item
     while let Some(command) = queue.pop_front() {
@@ -91,13 +95,12 @@ pub fn send_queue(queue: &mut VecDeque<Vec<u8>>) -> Result<(), CollectorError> {
             queue.push_front(command);
             return Err(CollectorError::UnableToSend);
         }
-    } 
+    }
 
     Ok(())
 }
 
 fn main() {
-
     let uuid = get_uuid();
 
     let (tx, rx) = std::sync::mpsc::channel::<CollectorCommandV1>();
