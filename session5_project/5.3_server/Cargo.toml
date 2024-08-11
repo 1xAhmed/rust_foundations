@@ -9,3 +9,9 @@ edition = "2021"
 shared_data = { path = "../5.1_shared_data" }
 anyhow = "1.0.86"
 tokio = { version = "1.39.2", features = ["full"] }
+sqlx = { version = "0.6.3", features = ["runtime-tokio-native-tls", "sqlite"] }
+uuid = "1.10.0"
+dotenv = "0.15.0"
+axum = "0.6.1"
+futures = "0.3.30"
+serde = { version = "1.0.205", features = ["derive"] }
