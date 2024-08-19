@@ -115,6 +115,7 @@ fn main() {
 
     while let Ok(command) = rx.recv() {
         let encoded = encode_v1(&command);
+        println!("Encoded size: {} bytes", encoded.len());
         data_queue.push_back(encoded);
         let _ = send_queue(&mut data_queue);
 
